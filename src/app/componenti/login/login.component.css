@@ -1,0 +1,72 @@
+h1 {
+    font-size: 4rem;
+    margin-bottom: 40px;
+}
+input {
+    border-radius: 0;
+    margin: 20px 0;
+    border: none;
+    height: 50px;
+    color:#2C413E ;
+    font-weight: 600;
+
+}
+.form-control:focus, .btn, input {
+    background-color: #FFF9F1;
+}
+.form-control:focus {
+    color: #935B49;
+    
+        box-shadow: none;
+
+    
+}
+.btn {
+    
+    color:#C58069 ;
+    margin-top: 40px;
+    
+}
+.btn:hover {
+    background-color: #2C413E ;
+    color:  #FFF9F1;
+    font-weight: normal;
+}
+.row {
+    height: 100vh;
+}
+
+.sin {
+   
+    background-size: cover;
+    
+}
+.des {
+    display: grid;
+    place-items: center;
+    background-color: #C58069;
+    
+}
+::placeholder {
+    color:#D6BAAF;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+@media only screen and (max-width: 450px) {
+    .col-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-6 {
+        flex: 0 0 90%;
+        max-width: 90%;
+        padding: 0 ;
+    }
+    .sin {
+        display: none;
+    }
+    .des {
+        padding: 0;
+    }
+}

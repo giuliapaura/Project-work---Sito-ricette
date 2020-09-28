@@ -1,0 +1,40 @@
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    display: inline;
+    margin: 0 10px;
+    color: #D6BAAF;
+}
+
+a {
+    color: #D6BAAF;
+}
+
+li:hover, a:hover {
+    cursor: pointer;
+    color: #C58069;
+    text-decoration: none;
+}
+.active {
+    color: #C58069;
+}
+
+.btn {
+    
+    color:#C58069 ;
+    margin-top: 40px;
+border: solid 1px #C58069 ; 
+    
+}
+.btn:hover {
+    background-color: #C58069 ;
+    color:  #FFF9F1;
+    font-weight: normal;
+}
+.bt-annulla:hover {
+    background-color:#2C413E ;
+    border: none;
+}

@@ -1,0 +1,70 @@
+
+.aggiungi {
+    
+   height: fit-content;
+    
+    display: grid;
+    place-items: center;
+    background-color: #2C413E;
+    padding: 100px 0;
+}
+h1 {
+    color: #C58069 ;
+    font-size: 4rem;
+    
+}
+label {
+    color: #FFF9F1;
+    font-weight: lighter;
+}
+input, select {
+    height: 50px;
+    
+}
+select {
+   
+    appearance: none; 
+}
+textarea, input, select {
+    border-radius: 0;
+    border: none;
+    background-color:#FFF9F1 ;
+    font-weight: 600;
+}
+
+.btn {
+    background-color:#FFF9F1  ;
+    color:#C58069 ;
+    margin-top: 40px;
+    border: none;
+}
+.btnimg {
+    color:#D6BAAF;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: normal;
+    
+   
+
+}
+.btn:hover {
+    background-color: #C58069 ;
+    color:  #FFF9F1;
+    font-weight: normal;
+}
+::placeholder {
+    color:#D6BAAF;
+    
+    font-weight: normal;
+}
+
+.alert-danger, .alert{
+    border-radius: 0;
+}
+.form-control:focus {
+    color: #935B49;
+    border:#935B49 2px solid;
+        box-shadow: none;
+
+    
+}

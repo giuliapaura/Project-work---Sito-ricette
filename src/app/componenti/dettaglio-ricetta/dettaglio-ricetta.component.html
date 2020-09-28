@@ -1,0 +1,53 @@
+<div *ngIf="ricetta">
+
+    <img src="{{ricetta.img}}" alt="colazione">
+    <div class="titolo text-center">
+        <span class="mr-3">Preparazione: <strong>{{ricetta.tempo}}'</strong></span> <span class="ml-3">Cottura:
+            <strong>{{ricetta.cottura}}'</strong></span>
+        <h1 class="">{{ricetta.titolo}}</h1>
+        <span class="ric-cat">{{ricetta.categoria}} / {{ricetta.dieta}}</span>
+    </div>
+    <div class="prep">
+        <div class="row container">
+            <div class="sin col-8">
+                <p class="descr mb-5">{{ricetta.descr}}</p>
+                <div class="text-center mb-5">
+                    <iframe *ngIf="ricetta.video" width="560" height="315" [src]="videoUrl" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+
+                <h4>Preparazione:</h4>
+                <div *ngFor="let step of steps">
+
+                    <p>{{step}}</p>
+                </div>
+                <h4 class="mt-5">Conservazione:</h4>
+                <p>{{ricetta.cons}}</p>
+
+            </div>
+            <div class="des col-4">
+                <div class="ingredienti">
+                    <h5 class="mb-0">Ingredienti:</h5>
+                    <span class="porzioni">per {{ricetta.porzioni}}</span>
+                    <ul class="mt-3">
+                        <li *ngFor="let ingrediente of ingredienti" class="mb-3">
+                            {{ingrediente}}
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="consigliati p-5 " *ngIf="correlate && correlate.length !== 0">
+        <div class="container ">
+            <h5 class="mb-5">Ricette simili</h5>
+            <app-card [ricette]="correlate" [classe]="'card-deck'"></app-card>
+        </div>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,89 @@
+.titolo {
+    background-color: #2C413E;
+    color: #FFF9F1;
+    padding: 50px 150px;
+}
+
+.titolo span {
+    color: #C58069;
+}
+.ric-cat {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+.descr {
+    font-size: 1.3rem;
+}
+
+h1 {
+font-size: 3.2rem;
+margin: 20px 0;
+
+}
+
+
+
+img {
+    object-fit: cover;
+   height: 60vh;
+   width: 100vw;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.3rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.9rem;
+}
+h5 {
+    font-size: 1.8rem;
+}
+
+.sin, .des {
+    padding: 50px;
+}
+.ingredienti {
+    border: solid 1px #2C413E;
+    padding: 20px;
+    
+  position: sticky; 
+  top: 80px;
+}
+.porzioni {
+    color: #C58069;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+.prep {
+    display: grid;
+    place-items: center;
+}
+.consigliati {
+    
+    background-color: #C58069;
+}
+
+@media only screen and (max-width: 450px) {
+
+    .titolo {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h1 {
+        line-height: 3rem;
+        font-size: 2.5rem;
+    }
+    .row {
+        flex-direction: column-reverse;
+    }
+    .col-4, .col-8 {
+        max-width: 100%;
+    }
+    
+}

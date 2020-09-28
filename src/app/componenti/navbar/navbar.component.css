@@ -1,0 +1,53 @@
+.navbar-light .navbar-nav .nav-link, .navbar-brand, a {
+    color: #D6BAAF;
+    text-transform: uppercase; 
+    font-size: 0.8rem;
+letter-spacing: 0.2rem; 
+    
+}
+
+
+.navbar-light .navbar-nav .nav-link.active {
+    
+    font-weight: 600;
+    color: #C58069;
+    letter-spacing: 0.2rem;
+    
+}
+.navbar-brand.active {
+    color: #C58069;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-brand:hover {
+    
+    cursor: pointer;
+    color: #C58069;
+    
+    
+}
+
+.logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    display: inline;
+    text-transform: none;
+    letter-spacing: normal;
+   
+}
+.des a {
+    color: teal;
+    margin-left: 10px;
+}
+@media only screen and (max-width: 450px) {
+    .des li {
+        text-align: right;
+    }
+    .navbar-collapse .nav-link {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .user {
+        padding-left: 0;
+    }
+    
+}
+

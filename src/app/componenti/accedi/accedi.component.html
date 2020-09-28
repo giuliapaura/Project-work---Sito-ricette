@@ -1,0 +1,27 @@
+<div class="row">
+    <div style="background-image: url(../../../assets/img/leaf.jpg);" class="sin col-5"></div>
+
+    <div class="des col-7">
+        <div class="des-content text-center col-6">
+
+            <form #f="ngForm" (ngSubmit)="loginUser(f)">
+                <h1>Accedi</h1>
+                <input type="hidden" ngModel #idUser="ngModel" name="idUser">
+
+
+                <input type="text" name="username" id="username" class="form-control" #username="ngModel" ngModel
+                    placeholder="username" required>
+
+
+                <input type="password" name="password" id="password" class="form-control" #password="ngModel" ngModel
+                    placeholder="password" required>
+
+                <input type="hidden" ngModel #token="ngModel" name="token">
+                <input type="hidden" ngModel #scadenza="ngModel" name="scadenza">
+
+                <button [disabled]="f.invalid" type="submit" class="btn btn-sm btn-warning">Accedi</button>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div style="height: 80px;"></div>
+<div class="container text-center">
+    <h1 *ngIf="utente">Ciao {{utente.nome}}</h1>
+
+    <ul>
+        <li [ngClass]="{active: showRicette}" (click)="ricette()">Tutte le tue ricette</li>
+        <li [ngClass]="{active: showModifica}" (click)="modifica()">Modifica Profilo </li>
+        <li [ngClass]="{active: showElimina}" (click)="elimina()">Elimina Profilo</li>
+        <li><a routerLink="/aggiungi-ricetta">Aggiungi una ricetta!</a></li>
+        <li></li>
+    </ul>
+
+
+    <div *ngIf="showElimina" class="text-center mt-5">
+        <h1>Vuoi davvero eliminare il tuo profilo?</h1>
+        <button class="btn mr-3" (click)="confermaElimina()">Si, elimina il mio profilo</button><button
+            class="btn bt-annulla" (click)="ricette()">Annulla</button>
+    </div>
+    <div *ngIf="showModifica" class="mt-5 text-center">
+
+        <app-modifica-utente *ngIf="utente" [datiUtente]="utente">
+        </app-modifica-utente>
+
+
+
+    </div>
+    <h1 *ngIf="showRicette && noRecipes">Ops! Non hai aggiunto ancora nessuna ricetta!</h1>
+
+    <!--SPINNER-->
+    <div *ngIf="!ricetteUtente" class="d-flex justify-content-center">
+        <div class="spinner-grow p-3  m-5" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!--/SPINNER-->
+    <div class="text-left">
+        <app-card *ngIf="ricetteUtente && showRicette " [show]="'true'" [ricette]="ricetteUtente"
+            [classe]="'card-columns'">
+        </app-card>
+    </div>
+
+</div>

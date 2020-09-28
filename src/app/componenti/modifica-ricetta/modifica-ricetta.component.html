@@ -1,0 +1,198 @@
+<div class="aggiungi" *ngIf="ricetta">
+
+
+    <form #addForm="ngForm" (ngSubmit)="edit(addForm)" class="container">
+
+        <h1 class="mb-3 text-center">Modifica la ricetta </h1>
+
+        <input type="hidden" ngModel #idRicetta="ngModel" name="idRicetta">
+
+
+        <div class="form-row mb-3">
+
+            <!-- INSERISCI TITOLO -->
+            <div class="form-group col-md-4">
+                <label for="titolo">Titolo della ricetta:</label>
+                <input required maxlength="75" [ngModel]="ricetta.titolo" name="titolo" #titolo="ngModel" id="titolo"
+                    type="text" placeholder="es.: Torta di Mele" class="form-control">
+                <!-- messaggi d'errore -->
+                <div *ngIf="titolo.touched && !titolo.valid" class="alert alert-danger">
+                    <div *ngIf="titolo.errors.required">La ricetta deve avere un titolo.</div>
+                </div>
+            </div>
+            <!--/form-group: titolo-->
+
+            <!-- INSERISCI CATEGORIA -->
+            <div class="form-group col-md-4">
+                <label for="categoria">Categoria ricetta:</label>
+                <select required name="categoria" [ngModel]="ricetta.categoria" #categoria="ngModel" id="categoria"
+                    class="form-control">
+                    <option value=""></option>
+                    <option value="colazione">Colazione</option>
+                    <option value="zuppe">Zuppe</option>
+                    <option value="insalate">Insalate</option>
+                    <option value="contorno">Contorno</option>
+                    <option value="primo">Primo</option>
+                    <option value="secondo">Secondo</option>
+                    <option value="bevande">Bevande</option>
+                    <option value="snack">Snack</option>
+                </select>
+                <!-- messaggi d'errore -->
+                <div *ngIf="categoria.touched && !categoria.valid" class="alert alert-danger">
+                    <div *ngIf="categoria.errors.required">Scegli una categoria.</div>
+                </div>
+            </div>
+            <!--/form-group: categoria-->
+            <!-- INSERISCI DIETA -->
+            <div class="form-group col-md-4">
+                <label for="dieta">Vegetariano o Vegano?</label>
+                <select required [ngModel]="ricetta.dieta" #dieta="ngModel" name="dieta" id="dieta"
+                    class="form-control">
+                    <option value=""></option>
+                    <option value="vegano">Vegano</option>
+                    <option value="vegetariano">Vegetariano</option>
+                </select>
+                <!-- messaggi d'errore -->
+                <div *ngIf="dieta.touched && !dieta.valid" class="alert alert-danger">
+                    <div *ngIf="dieta.errors.required">Inserisci il tipo di dietaa.</div>
+                </div>
+            </div>
+            <!--/form-group:dieta-->
+        </div>
+        <!--/form-row-->
+
+
+        <div class="form-row mb-3">
+
+
+
+            <!-- INSERISCI TEMPO PREPARAZIONE -->
+            <div class="form-group col-md-4">
+                <label for="tempo">Minuti di preparazione:</label>
+                <input type="number" required [ngModel]="ricetta.tempo" #tempo="ngModel" name="tempo" id="tempo"
+                    class="form-control" placeholder="es: 10'">
+
+                <!-- messaggi d'errore -->
+                <div *ngIf="tempo.touched && !tempo.valid" class="alert alert-danger">
+                    <div *ngIf="tempo.errors.required">Inserisci il tempo di preparazione.</div>
+                </div>
+            </div>
+            <!--/form-group: preparazione-->
+            <!-- INSERISCI TEMPO COTTURA -->
+            <div class="form-group col-md-4">
+                <label for="cottura">Minuti di cottura:</label>
+                <input type="number" [ngModel]="ricetta.cottura" #cottura="ngModel" name="cottura" id="cottura"
+                    class="form-control" placeholder="es: 90'">
+
+            </div>
+            <!--/form-group: cottura-->
+
+            <!-- INSERISCI PORZIONI -->
+            <div class="form-group col-md-4">
+                <label for="porzioni">Dose per:</label>
+                <input required maxlength="45" [ngModel]="ricetta.porzioni" name="porzioni" #porzioni="ngModel"
+                    id="porzioni" type="text" placeholder="es.: 5 persone, 12 biscotti" class="form-control">
+                <!-- messaggi d'errore -->
+                <div *ngIf="porzioni.touched && !porzioni.valid" class="alert alert-danger">
+                    <div *ngIf="porzioni.errors.required">Inserisci le porzioni.</div>
+                </div>
+            </div>
+            <!--/form-group: porzioni-->
+        </div>
+        <!--/form-row-->
+
+        <div class="form-row mb-3">
+
+            <!-- INSERISCI descrRIZIONE -->
+            <div class="form-group col-md-6">
+                <label for="descr">Aggiungi una piccola descrizione:</label>
+                <textarea required [ngModel]="ricetta.descr" #descr="ngModel" name="descr" id="descr" cols="30" rows="3"
+                    class="form-control"
+                    placeholder="es.: Questa torta di mele è la più sana, veloce e gustosa che avrete mai fatto!"></textarea>
+                <!-- messaggi d'errore -->
+                <div *ngIf="descr.touched && !descr.valid" class="alert alert-danger">
+                    <div *ngIf="descr.errors.required">Aggiungi una piccola descrizione!</div>
+                </div>
+            </div>
+            <!--form-group: descrrizione-->
+
+            <!-- INSERISCI INGREDIENTI -->
+            <div class="form-group col-md-6">
+                <label for="ingr">Ingredienti:</label>
+                <textarea required [ngModel]="ricetta.ingr" #ingr="ngModel" name="ingr" id="ingr" cols="30" rows="3"
+                    class="form-control" placeholder="es.: 350g di Farina 00, 2 Uova..."></textarea>
+                <!-- messaggi d'errore -->
+                <div *ngIf="ingr.touched && !ingr.valid" class="alert alert-danger">
+                    <div *ngIf="ingr.errors.required">Gli ingredienti sono la parte fondamentale di una ricetta!!
+                    </div>
+                </div>
+            </div>
+            <!--form-group: ingredienti-->
+        </div>
+        <!--form-row-->
+
+        <div class="form-row mb-3">
+
+            <!-- INSERISCI PREPARAZIONE -->
+            <div class="form-group col-md-6">
+                <label for="prep">Preparazione:</label>
+                <textarea required [ngModel]="ricetta.prep" #prep="ngModel" name="prep" id="prep" cols="30" rows="3"
+                    class="form-control"
+                    placeholder="es.: Setaccia la farina e mescolala insieme allo zucchero. Aggiungi le uova e il latte..."></textarea>
+                <!-- messaggi d'errore -->
+                <div *ngIf="prep.touched && !prep.valid" class="alert alert-danger">
+                    <div *ngIf="prep.errors.required">Come si fa questa ricetta?</div>
+                </div>
+            </div>
+            <!--form-group: preparazione-->
+
+            <!-- INSERISCI CONSERVAZIONE -->
+            <div class="form-group col-md-6">
+                <label for="cons">Conservazione:</label>
+                <textarea [ngModel]="ricetta.cons" #cons="ngModel" name="cons" id="cons" cols="30" rows="3"
+                    class="form-control"
+                    placeholder="es.: La torta si può conservare in frigo per 4 giorni o si può congelare per massimo 3 mesi"></textarea>
+            </div>
+            <!--form-group: conservazione-->
+        </div>
+        <!--form-row-->
+        <div class="form-row">
+            <!-- VIDEO-->
+            <div class="form-group col">
+                <label for="video">URL Video:</label>
+                <input [ngModel]="ricetta.video" name="video" #video="ngModel" id="video" type="text"
+                    placeholder="es.: https://www.youtube.com/watch?v=jfqtOTwUcKE" class="form-control">
+
+            </div>
+
+            <!--form-group: video-->
+        </div>
+        <!--CARICA IMMAGINE-->
+        <button type="button" class="btn  btnimg" (click)="selectedImg.click()" id="upload">Seleziona
+            foto
+            <fa-icon class="ml-3" [icon]="faImage"></fa-icon>
+        </button>
+
+        <div class="form-group">
+            <input style="display: none" type="file" class="form-control" name="selectedImg" (change)="readUrl($event)"
+                #selectedImg>
+        </div>
+
+        <!--PREVIEW IMMAGINE-->
+        <div class="text-center selected-img">
+            <img *ngIf="ricetta.img" [src]="ricetta.img" height="200">
+        </div>
+        <input *ngIf="ricetta.img" type="hidden" [ngModel]="ricetta.img" name="img" #img="ngModel">
+        <input type="hidden" [ngModel]="ricetta.autoreRic" name="autoreRic" #autoreRic="ngModel">
+
+
+
+        <div class="text-center">
+            <button type="button" class=" btn  " [disabled]="!addForm.valid" (click)="edit(addForm)">Modifica
+                Ricetta</button>
+        </div>
+
+
+    </form>
+
+</div>

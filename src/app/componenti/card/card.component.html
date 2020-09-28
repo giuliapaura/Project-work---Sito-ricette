@@ -1,0 +1,22 @@
+<div [class]="classe">
+    <div class="card" *ngFor="let ricetta of ricette">
+
+        <a [routerLink]="['/ricette', ricetta.idRicetta]">
+            <img class="card-img-top" height="250" [src]="ricetta.img" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ricetta.titolo}}</h5>
+                <span class="cat-diet card-text">{{ricetta.categoria}} / {{ricetta.dieta}}</span>
+                <p class="card-text">{{ricetta.descr}}</p>
+
+            </div>
+        </a>
+        <div class="card-footer bg-transparent text-center" *ngIf="ricetta.autoreRic === utenteLoggato && show">
+            <a class="mr-2 text-danger" (click)="edit(ricetta)">
+                <fa-icon [icon]="faPen"></fa-icon>
+            </a>
+            <a class="ml-2 text-danger" (click)="delete(ricetta)">
+                <fa-icon [icon]=" faTrashAlt"></fa-icon>
+            </a>
+        </div>
+    </div>
+</div>

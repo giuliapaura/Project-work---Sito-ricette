@@ -1,0 +1,41 @@
+.form-control, .input-group-text {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 1px #2C413E;
+    border-radius: 0;
+    background-color: transparent;
+    
+    color: #C58069;
+    
+}
+
+.input-group {
+    padding: 0;
+
+}
+
+.form-control {
+    padding-left: 0;
+    height: 60px;
+    font-size: 2rem;
+    font-family: 'DM Serif Display', serif;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control:focus::placeholder {
+    color: #DBDAD3;
+}
+::placeholder {
+    font-size: 2rem;
+    font-family: 'DM Serif Display', serif;
+    color: #2C413E;
+}
+
+@media only screen and (max-width: 360px) {
+    ::placeholder {
+        font-size: 1.5rem;
+        
+    }
+}

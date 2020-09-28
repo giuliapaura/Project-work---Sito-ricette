@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #FFF9F1;
+    font-family: 'Roboto', sans-serif;
+    color: #2C413E;
+}
+
+h1, h4, h5 {
+    font-family: 'DM Serif Display', serif;
+    
+}
+
+.btn {
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    line-height: auto;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    padding: 0.8rem 1rem;
+    }

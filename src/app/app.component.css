@@ -1,0 +1,21 @@
+app-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    
+   
+}
+
+
+
+@media only screen and (max-width: 360px) {
+    app-footer {
+        margin: 0 auto;
+        background-color:#2C413E;
+        padding: 20px;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+   
+}

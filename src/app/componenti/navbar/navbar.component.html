@@ -1,0 +1,45 @@
+<nav class="navbar fixed-top navbar-light navbar-expand-sm bg-white">
+
+    <a class="navbar-brand" routerLinkActive="active" routerLink="home"><i class="fab fa-pagelines fa-2x"></i></a>
+
+    <a href="" class="nav-link">
+        <h2 *ngIf="loginbtn" class="logo">CucinaVegetale</h2>
+    </a>
+
+    <a *ngIf="logoutbtn" class="nav-link user" routerLink="profilo" routerLinkActive="active">{{name}}</a>
+
+    <!--HAMBURGER MENU-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <!-- DESTRA-->
+        <ul class="navbar-nav ml-auto des">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="ricette">Ricette</a>
+            </li>
+
+            <li class="nav-item">
+                <a *ngIf="loginbtn" class="nav-link" routerLinkActive="active" routerLink="registrati">Registrati</a>
+            </li>
+            <li class="nav-item " *ngIf="logoutbtn">
+                <a class="nav-link" routerLinkActive="active" routerLink="aggiungi-ricetta">Aggiungi una ricetta</a>
+            </li>
+            <li class="nav-item" *ngIf="loginbtn">
+                <a class="nav-link" routerLinkActive="active" routerLink="accedi"
+                    routerLinkActive="router-link-active">Accedi</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="logoutbtn" class="nav-link" (click)="logout()">Esci</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</nav> <!-- / .navbar -->

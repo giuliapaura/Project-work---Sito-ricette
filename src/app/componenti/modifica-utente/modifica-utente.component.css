@@ -1,0 +1,40 @@
+input {
+    border-radius: 0;
+    margin: 20px 0;
+    height: 50px;
+    color:#2C413E ;
+    font-weight: 600;
+
+}
+.form-control:focus, .btn, input {
+    background-color: #FFF9F1;
+}
+.form-control {
+    color: #C58069;
+    border:#C58069  2px solid;
+        box-shadow: none; 
+}
+.form-control:focus {
+    color: #935B49;
+    border:#935B49  2px solid;
+}
+.btn {
+    
+    color:#C58069 ;
+    margin-top: 40px;
+    border: solid 1px #C58069 ; 
+    
+}
+.btn:hover {
+    background-color: #2C413E ;
+    color:  #FFF9F1;
+    font-weight: normal;
+    border: none;
+}
+
+@media only screen and (max-width: 450px) {
+    .col-6 {
+        /* flex: 0 0 50%; */
+        max-width: 100%;
+    }
+}

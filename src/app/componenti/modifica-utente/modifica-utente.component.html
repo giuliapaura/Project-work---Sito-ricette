@@ -1,0 +1,27 @@
+<div class="container col-6">
+    <form #f="ngForm" (ngSubmit)="modificaUser(f)">
+        <h1>Modifica i tuoi dati</h1>
+        <input type="hidden" [ngModel]="datiUtente.idUser" #idUser="ngModel" name="idUser">
+
+        <input type="text" name="nome" id="nome" class="form-control" #nome="ngModel" [ngModel]="datiUtente.nome"
+            placeholder="nome" required>
+
+        <input type="text" name="cognome" id="cognome" class="form-control" #cognome="ngModel"
+            [ngModel]="datiUtente.cognome" placeholder="cognome" required>
+
+
+        <input type="text" name="username" id="username" class="form-control" #username="ngModel"
+            [ngModel]="datiUtente.username" placeholder="username" required>
+
+
+        <input type="password" name="password" id="password" class="form-control" #password="ngModel"
+            [ngModel]="datiUtente.password" placeholder="password" required>
+
+        <input type="hidden" ngModel #token="ngModel" name="token">
+        <input type="hidden" ngModel #scadenza="ngModel" name="scadenza">
+        <button [disabled]="f.invalid" type="submit" class="btn ">Modifica!</button>
+
+
+
+    </form>
+</div>

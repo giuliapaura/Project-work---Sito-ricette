@@ -1,0 +1,52 @@
+.card {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0px 4px 30px rgba(44, 65, 62, 0.06);
+    ;
+}
+.card:hover {
+    box-shadow: 0px 4px 30px rgba(44, 65, 62, 0.2);
+    
+}
+.card-img-top {
+    border-radius: 0;
+}
+img {
+    padding: 15px;
+    object-fit: cover;
+}
+
+a {
+    color: #2C413E;
+
+}
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+h5 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+}
+
+.cat-diet {
+    color: #C58069;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cerca {
+    border: none;
+    border-radius: 0;
+    background-color:  #C58069;
+    height: 40px;
+}
+
+::placeholder {
+    color: #D6BAAF;
+}
+

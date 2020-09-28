@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class=" " style="margin-top: 80px;">
+
+        <!--SEARCHBAR-->
+
+
+
+        <div class="input-group col-12 mb-5 ">
+            <input class="form-control" #cerca id="search-box" (input)="search(cerca.value)"
+                placeholder="Cosa cucinerai oggi?" />
+            <div class="input-group-append">
+                <span class="input-group-text">
+                    <fa-icon [icon]="faSearch"></fa-icon>
+                </span>
+            </div>
+        </div>
+
+
+
+
+
+        <!--/ searchbar-->
+        <!--SPINNER-->
+        <div *ngIf="!tutte" class="d-flex justify-content-center">
+            <div class="spinner-grow p-3  m-5" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!--/SPINNER-->
+
+        <app-card *ngIf="!risultati " [ricette]="tutte" [classe]="'card-columns'"></app-card>
+        <app-card *ngIf="risultati " [ricette]="risultati" [classe]="'card-columns'"></app-card>
+
+
+    </div>
+</div>

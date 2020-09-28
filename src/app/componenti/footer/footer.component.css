@@ -1,0 +1,39 @@
+*  {
+    background-color: transparent;
+    
+}
+p {
+    font-size: 0.8rem;
+    color: #D6BAAF;
+    
+}
+.fab:hover {
+    color: #C58069;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.fab {
+    color: #D6BAAF;
+    margin-bottom: 20px;
+}
+.nome {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    
+}
+
+@media only screen and (max-width: 450px) {
+    .icon {
+        display: flex;
+        flex-direction: row;
+         
+    }
+    .fab {
+        margin: 0 20px ;
+    }
+}
